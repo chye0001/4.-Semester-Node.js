@@ -51,5 +51,14 @@ const value = 4;
 
 // don't use plus "+" in console.log use "," instead to avoid type coercion. A.K.A, us "," so it wont change the datatype for value to String.
 // but if you use plus "+" it would change the datatype to a String. We dont want this as the console.log() is made for us devs to debug. We want to see the datatype
+
+//do this
 console.log(assignmentDescription, value)
+
+//avoid this
 console.log(assignmentDescription + " " + value)
+
+
+
+// data types: null, undefined, object, string, number, boolean, bigint, 
+
