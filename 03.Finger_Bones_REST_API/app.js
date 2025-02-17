@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-const fingerBones = [
+let fingerBones = [
   {
     id: 1,
     artistName: "Phalange Knowles",
@@ -12,6 +12,8 @@ const fingerBones = [
     artistName: "Distal Phalange",
   },
 ];
+
+let id = 2;
 
 // route / get handler
 app.get("/fingerbones", (req, res) => {
@@ -34,13 +36,8 @@ app.get("/fingerbones/:id", (req, res) => {
 app.post("/fingerbones", (req, res) => {
   const postReq = req.body;
 
-  const invalidRequest = validateRequest(req, res);
-  if (invalidRequest) {
-    return;
-  }
-
   const newFingerbone = {
-    id: Number(postReq.id),
+    id: ++id,
     artistName: postReq.artistName,
   };
 
@@ -48,67 +45,98 @@ app.post("/fingerbones", (req, res) => {
   res.send({ data: newFingerbone });
 });
 
+app.put("/fingerbones/:id", (req, res) => {
+  const putReq = req.body;
 
+  const id = Number(req.params.id);
+
+  const doesExist = doesIdExist(id);
+  if (!doesExist) {
+    res.status(400).send({ error: `ID: ${id} does not exist` });
+    return;
+  }
+
+  const updatedFingerBone = {
+    id: id,
+    artistName: putReq.artistName,
+  };
+
+  fingerBones = fingerBones.filter((fingerBone) => fingerBone.id !== id);
+  fingerBones.push(updatedFingerBone);
+  res.send({ data: updatedFingerBone });
+});
+
+app.delete("/fingerbones/:id", (req, res) => {
+  const id = Number(req.params.id);
+
+  const doesExist = doesIdExist(id);
+  if (!doesExist) {
+    res.status(400).send({ error: `ID: ${id} does not exist` });
+    return;
+  }
+
+  fingerBones = fingerBones.filter((fingerbone) => fingerbone.id !== id);
+  res.send({ success: `Fingerbone with ID: ${id} was removed` });
+});
 
 //validation functions
 
-function validateRequest(req, res) {
-  const reqBody = req.body;
-  const invalidFields = validateFields(reqBody, res);
-  if (invalidFields) {
-    return true;
-  }
+// function validateRequest(req, res) {
+//   const reqBody = req.body;
+//   const invalidFields = validateFields(reqBody, res);
+//   if (invalidFields) {
+//     return true;
+//   }
 
-  const id = Number(reqBody.id);
-  const invalidIdType = validateIdIsNumber(id, res);
-  if (invalidIdType) {
-    return true;
-  }
+//   const id = Number(reqBody.id);
+//   const invalidIdType = validateIdIsNumber(id, res);
+//   if (invalidIdType) {
+//     return true;
+//   }
 
-  const invalidIdSize = validateIdLargerThanZero(id, res);
-  if (invalidIdSize) {
-    return true;
-  }
+//   const invalidIdSize = validateIdLargerThanZero(id, res);
+//   if (invalidIdSize) {
+//     return true;
+//   }
 
-  const invalidId = validateIdDoNotExist(id, res);
-  if (invalidId) {
+//   const invalidId = doesIdExist(id, res);
+//   if (invalidId) {
+//     return true;
+//   }
+
+//   return false;
+// }
+
+// function validateFields(reqBody, res) {
+//   if (reqBody.id === undefined || reqBody.artistName === undefined) {
+//     res.status(400).send({
+//       error: `The post request most contain the following fields: id and artistName`,
+//     });
+//     return true;
+//   }
+// }
+
+// function validateIdIsNumber(id, res) {
+//   if (isNaN(id)) {
+//     res.status(400).send({ error: `ID most be a number` });
+//     return true;
+//   }
+// }
+
+// function validateIdLargerThanZero(id, res) {
+//   if (id <= 0) {
+//     res.status(400).send({ error: `ID most be larger than 0` });
+//     return true;
+//   }
+// }
+
+function doesIdExist(id) {
+  const isFoundId = fingerBones.some((fingerbone) => fingerbone.id === id);
+  if (isFoundId) {
     return true;
   }
 
   return false;
-}
-
-function validateFields(reqBody, res) {
-  if (reqBody.id === undefined || reqBody.artistName === undefined) {
-    res
-      .status(400)
-      .send({
-        error: `The post request most contain the following fields: id and artistName`,
-      });
-    return true;
-  }
-}
-
-function validateIdIsNumber(id, res) {
-  if (isNaN(id)) {
-    res.status(400).send({ error: `ID most be a number` });
-    return true;
-  }
-}
-
-function validateIdLargerThanZero(id, res) {
-  if (id <= 0) {
-    res.status(400).send({ error: `ID most be larger than 0` });
-    return true;
-  }
-}
-
-function validateIdDoNotExist(id, res) {
-  const isFoundId = fingerBones.some((fingerbone) => fingerbone.id === id);
-  if (isFoundId) {
-    res.status(400).send({ error: `The following ID: ${id} is not valid` });
-    return true;
-  }
 }
 
 // Status codes
