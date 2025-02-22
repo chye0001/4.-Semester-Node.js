@@ -1,3 +1,6 @@
+
+// html filer er client filer. For at lave bedre seperation of concerns vil man lave mapper hvor man kan komme dem i.
+
 const e = require("express");
 const express = require("express");
 const app = express();
@@ -17,13 +20,6 @@ app.get("/yourfavoritenumber/:favoriteNumber", (req, res) => {
     const yourFavoriteNumber = req.params.favoriteNumber;
     res.send({ message: `The coolest number: ${yourFavoriteNumber}` })
 })
-
-// app.get("/yourfavoritethings/:thing1/:thing2", (req, res) => {
-//     const thing1 = req.params.thing1;
-//     const thing2 = req.params.thing2;
-
-//     res.send([{thing: thing1}, {thing: thing2}])
-// })
 
 app.get("/yourfavoritethings/:thing1/:thing2", (req, res) => {
     const thing1 = req.params.thing1;

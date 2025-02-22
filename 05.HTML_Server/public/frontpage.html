@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 3. link to external CSS file -->
+    <!-- <link rel="stylesheet" href="./frontpage.css"> -->
+
+    <!-- 2: CSS in style tag -->
+    <style>
+        #frontpage-header {
+            color: red
+        }
+
+        .headers {
+            background-color: grey;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="frontpage-header" class="headers">Frontpage</h1>
+
+    <!-- 1: inline-css -->
+    <h2 class="headers" style="color: greenyellow;">Welcome users!</h2>
+
+    <div id="visitorsCount"></div>
+
+
+
+
+
+    <h6>pacakge names for client files aka HTML files for different frameworks/languages</h6>
+    <p>www</p>
+    <p>templates - Java med ThymeLeaf</p>
+    <p>public - Express</p>
+    <p>resources - Java</p>
+
+    <script>
+        // assignment: fetch the visitors count and show it on the page
+
+        //man får en readable bite stream. Derfor skal man parse til JSON.
+        fetch("/visitorscounts")
+            .then((response) => response.json())
+            .then((result) => {
+                const visitorCountDiv = document.getElementById("visitorsCount");
+                visitorCountDiv.textContent = result.data;
+            });
+        
+    </script>
+</body>
+</html>
