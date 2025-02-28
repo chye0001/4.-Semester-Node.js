@@ -1,9 +1,0 @@
-circular dependency problem
-
-
-commonjs syntax:
-requrie
-__dirname
-__filename
-
-når man bruger requrie() til importerer kaldes common js. Da der før i tiden ikke var module, og dermed ikke en bestemt måde at import/export.

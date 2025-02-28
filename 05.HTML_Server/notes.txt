@@ -1,0 +1,26 @@
+circular dependency problem
+
+
+commonjs syntax:
+requrie
+__dirname
+__filename
+
+når man bruger requrie() til importerer kaldes common js. Da der før i tiden ikke var module, og dermed ikke en bestemt måde at import/export.
+
+
+
+
+
+REDIRECT
+4 ways of redirecting a user to another page:
+
+#these keeps the browsing history intact so when you click the back button you will be redirected to the previouse page.
+window.location.href = "/endpoint"
+location.href = "/endpoint"
+
+#this erases the history, so when you click back you will end back on google.com
+window.location.replace = "/endpoint"
+
+#this is placed in the header, and after 3 seconds you will get redireted to /partyPage
+<meta http-equiv="refresh" content="3;/partyPage">

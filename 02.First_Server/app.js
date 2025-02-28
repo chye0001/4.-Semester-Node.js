@@ -28,6 +28,10 @@ app.get("/yourfavoritethings/:thing1/:thing2", (req, res) => {
     res.send([{data: "Your favorite things: ", thing1, thing2}])
 })
 
+app.get("/redirecttofavoritethings", (req, res) => {
+    res.redirect("/yourfavoritethings/tulipes/sea lions")
+})
+
 // assignment create a route for /search that returns an empty JSON
 // task create a search where the query parameter is q that contains the search
 app.get("/search", (req, res) => {
@@ -39,7 +43,6 @@ app.get("/search", (req, res) => {
 app.get("/welcomepage", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 })
-
 
 app.post("/favoritepoliticians", (req, res) => {
     console.log(req.body)

@@ -3,6 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta http-equiv="refresh" content="3;/partyPage">
+
     <!-- 3. link to external CSS file -->
     <link rel="stylesheet" href="./frontpage/frontpage.css">
 
@@ -29,7 +31,15 @@
     <p>You are the visitor number:</p>
     <div id="visitorsCount"></div>
 
+<!-- less dynamic hardcoded location-->
+    <a href="../partypage/partyPage.html">Party page (location)</a> 
 
+    
+    <!-- more dynamic calls the endpoint -->
+    <a href="/partyPage">Party page (endpoint)</a> 
+
+    <p id="countdown"></p>
+    <button id="partyPage">Party Page</button>
 
 
 
@@ -52,6 +62,21 @@
                 visitorCountDiv.textContent = result.data;
             });
         
+
+        function goToParty() {
+            
+            let countDown = 3;
+            
+            const countdownElement = document.getElementById("countdown");
+            countdownElement.textContent = countDown;
+
+            setTimeout(() => window.location.href = "/partypage", 3000)
+            const intervalId = setInterval( () => countdownElement.textContent = --countDown , 1000)
+            setTimeout(()=> clearInterval(intervalId), 3000);
+        }
+        
+        const partyPageBtn = document.getElementById("partyPage");
+        partyPageBtn.addEventListener("click", goToParty)
     </script>
 </body>
 </html>
