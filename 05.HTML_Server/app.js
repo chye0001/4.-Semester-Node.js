@@ -1,18 +1,22 @@
-const express = require("express");
+// const express = require("express");     //This is commonjs
+import express from 'express';             //This comes from ES6 because of modules.
+import path from 'path';
+import partiesLibraryESModules from './util/partiesLibaryES.js'
 
-const { parties } = require("./util/partiesLibary.js") //this is called DESTRUCTURING
+// const { parties } = require("./util/partiesLibary.js") //this is called DESTRUCTURING
 // console.log(parties)
 
 const app = express();
+app.use(express.static('public')); // in express there is a security feature that prevents you from linking to files, such as src="" or href="" inside <link> and <script></script>. To enable this we use express.static('public'). Everything in the public folder is by convention public to everyone.
 
 let visitorsCount = 0;
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/frontpage/frontpage.html") // this needs the abselute path rather than the relative path. Therefor we use __dirname.
+    res.sendFile(path.resolve("public/frontpage/frontpage.html")) // this needs the abselute path rather than the relative path. Therefor we use __dirname.
 })
 
 app.get("/partypage", (req, res) => {
-    res.sendFile(__dirname + "/public/partypage/partypage.html")
+    res.sendFile(path.resolve("public/partypage/partyPage.html"))
 })
 
 // task: create a route /visitorcounts that returns the visitor count
