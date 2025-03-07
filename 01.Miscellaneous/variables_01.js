@@ -3,9 +3,7 @@ console.log("Hello world")
 // const is NOT a constant
 // that means that const CAN have its value changed
 // const is a constant in the DECLARATION
-// const MUST be declared as it is initialized, i.e. you MUST declare/initilize it with a value.
-
-// TODO What is the difference between declaration and initilizetion
+// const MUST be initialized as it is declared, i.e. you MUST initilize it with a value.
 
 const me = {};
 me.name = "Bo"
@@ -28,7 +26,6 @@ console.log(hobbies);
 const jsObject = {
 
 }
-
 
 
 

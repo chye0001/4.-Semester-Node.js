@@ -11,6 +11,19 @@ console.log(doubleNumbers);
 
 
 
+const object = {
+  someKey: "someValue"
+  //comment is allowed here
+}
+
+
+//type coercion
+2 == "2"   //equals true
+
+//strict equality
+2 === "2" //equals false
+
+
 // assignment: lower the height for all satellites by 3.000 except for MIR
 const satellites = [
   {

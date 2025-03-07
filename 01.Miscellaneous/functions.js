@@ -29,9 +29,6 @@ const getRandomIntArrowFunction = (min, max) => {
 
 
 
-
-
-
               //name: string  |  action: function
 function genericPerformer(name, action) {
     return action(name);

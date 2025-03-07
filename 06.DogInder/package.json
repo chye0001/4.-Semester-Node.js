@@ -1,0 +1,31 @@
+{
+  "name": "doginder",
+  "version": "0.0.1",
+  "description": "Tinder for indian dogs",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chye0001/4.-Semester-Node.js.git"
+  },
+  "keywords": [
+    "tinder",
+    "dog",
+    "dogs",
+    "indian",
+    "match-making",
+    "love"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chye0001/4.-Semester-Node.js/issues"
+  },
+  "homepage": "https://github.com/chye0001/4.-Semester-Node.js#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
