@@ -55,4 +55,13 @@ app.post("/postsomething", (req, res) => {
     res.send(body)
 })
 
-app.listen("8080");
+//this is a proxy call, since I can call this server, and then this server calls google's server.
+app.get("/proxy", async (req, res) => {
+    const response = await fetch("https://www.google.com/");
+    const result = await response.text();
+
+    res.send(result);
+});
+
+const PORT = 8080;
+app.listen(PORT, ()=>console.log("server is running on port: ", PORT));
