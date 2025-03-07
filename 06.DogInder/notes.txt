@@ -1,0 +1,18 @@
+process.env //giver adgang til alle enviormental variables i node.
+
+server.address().port //this prints the port that the server is running on.
+express automatically finds an avaliable port, 
+if you give it a undefined port when setting up the porject using app.listen(PORT=undefined)
+
+CORS only exists in brower, you can utilize proxy servers to get around CORS, since CORS is not on server and ONLY in client
+a case for using a proxy is that we do not want to expose our API keys in the client, we only want it in the backend,
+so by keeping it safe place it in the backend, then this become a proxy.
+
+
+google advanced image search: til at finde billeder hvor retighederne tilader man bruger dem.
+
+man bruger ikke rigtigt pixels længere i css, da skærme er blevet så forskellige, f.eks. OLED, MINI LED osv. brug i stedet em / rem
+
+når vi bruger app.use(express.static("public")), så i vores html filer, når vi skal pege på filer i public mappen, så brug altid endpoint til at pege på den, brug ikke fil stien!
+
+ast = Abstract Syntax Tree

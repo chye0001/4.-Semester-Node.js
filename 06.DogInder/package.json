@@ -5,7 +5,8 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    
+    "dev": "cross-env PORT=8080 nodemon app.js",
+    "prod": "cross-env PORT=80 ENVIORMENT=PROD node app.jar"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
   "homepage": "https://github.com/chye0001/4.-Semester-Node.js#readme",
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
