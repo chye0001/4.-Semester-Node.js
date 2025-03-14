@@ -1,21 +1,12 @@
 import express from 'express';
-import path from 'path';
-import fs from 'fs';
+// import path from 'path';
+import { frontpagePage, matchesPage } from './util/pages.js';
 import { getMatches } from './util/matches.js';
 
 const app = express();
 app.use(express.static("public"));
 
-const header = fs.readFileSync('./public/components/header/header.html').toString();
-const frontpage = fs.readFileSync('./public/frontpage/frontpage.html').toString();
-const matches = fs.readFileSync('./public/matches/matches.html').toString();
-const footer = fs.readFileSync('./public/components/footer/footer.html').toString();
-
-const frontpagePage = header + frontpage + footer; 
-const matchesPage = header + matches + footer;
-
-console.log(frontpagePage)
-// SSR REFACTOR
+// SSR REFACTORno
 app.get("/", (req, res) => {
     res.send(frontpagePage)
 });

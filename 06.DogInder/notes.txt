@@ -23,3 +23,7 @@ ast = Abstract Syntax Tree
 
 
 Hvad er forskellen mellem SSR helt præcis .send() og .sendFile().
+
+
+nodemon have a configuration file where you can configure how nodemon should run.
+by default nodemon does not monitor html files, only js, mjs, cjs
