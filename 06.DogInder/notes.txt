@@ -16,3 +16,10 @@ man bruger ikke rigtigt pixels længere i css, da skærme er blevet så forskell
 når vi bruger app.use(express.static("public")), så i vores html filer, når vi skal pege på filer i public mappen, så brug altid endpoint til at pege på den, brug ikke fil stien!
 
 ast = Abstract Syntax Tree
+
+
+
+
+
+
+Hvad er forskellen mellem SSR helt præcis .send() og .sendFile().
