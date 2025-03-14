@@ -1,0 +1,28 @@
+import { fakerEN_IN } from '@faker-js/faker';
+
+async function getMatches(numberOfMatches = 2) {
+    
+    const promises = [];
+
+    for(let i = 0; i < numberOfMatches; i++) {
+        const promise = fetch("https://dog.ceo/api/breeds/image/random")
+        .then((response) => response.json());
+        
+        promises.push(promise);
+    }
+
+    const results = await Promise.all(promises); //først når alle promises er fufilled går den videre til næste linje, det er hvad Promise.all() gør.
+    const matches = results.map( (result) => ({ image: result.message, ...getIndianProfile() }))
+    return matches;
+}
+
+function getIndianProfile() {
+    return {
+        name: fakerEN_IN.person.fullName(),
+        bio: fakerEN_IN.person.bio(),
+        city: fakerEN_IN.location.city(),
+        streetAddress: fakerEN_IN.location.streetAddress()
+    };
+}
+
+export { getMatches }

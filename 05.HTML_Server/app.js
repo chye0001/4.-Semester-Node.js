@@ -11,13 +11,17 @@ app.use(express.static('public')); // in express there is a security feature tha
 
 let visitorsCount = 0;
 
+//commonjs v
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("public/frontpage/frontpage.html")) // this needs the abselute path rather than the relative path. Therefor we use __dirname.
+    res.sendFile(__dirname + "/public/frontpage/frontpage.html") // this needs the abselute path rather than the relative path. Therefor we use __dirname.
 })
 
+//ES6 v
+import path from 'path';
+
 app.get("/partypage", (req, res) => {
-    res.sendFile(path.resolve("public/partypage/partyPage.html"))
-})
+    res.sendFile(path.resolve("public/partypage/partyPage.html"));
+});
 
 // task: create a route /visitorcounts that returns the visitor count
 app.get("/visitorscounts", (req, res) => {

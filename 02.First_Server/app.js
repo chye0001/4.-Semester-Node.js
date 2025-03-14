@@ -35,12 +35,13 @@ app.get("/redirecttofavoritethings", (req, res) => {
 // assignment create a route for /search that returns an empty JSON
 // task create a search where the query parameter is q that contains the search
 app.get("/search", (req, res) => {
-    const queryParameter = req.query.q;
-    res.send({data: `You searched for ${queryParameter}`});
-})
+    const queryParameterQ = req.query.q;
+    const queryParameterK= req.query.k;
+    res.send({data: `You searched for q=${queryParameterQ} and k=${queryParameterK}`});
+});
 
 
-app.get("/welcomepage", (req, res) => {
+app.get("/welcomepage", (req, res) => {S
     res.sendFile(__dirname + "/index.html");
 })
 
@@ -51,7 +52,7 @@ app.post("/favoritepoliticians", (req, res) => {
 
 // assignment create a new route and send some data to it through the body
 app.post("/postsomething", (req, res) => {
-    const body = req.body;
+    const body = req.body; //this would be undefined
     res.send(body)
 })
 
@@ -60,8 +61,16 @@ app.get("/proxy", async (req, res) => {
     const response = await fetch("https://www.google.com/");
     const result = await response.text();
 
-    res.send(result);
+    res.status(500).send(result);
 });
 
 const PORT = 8080;
 app.listen(PORT, ()=>console.log("server is running on port: ", PORT));
+
+
+
+app.get("/someEndpoint/:somePathVariable", (req, res) => {
+    const extractedValue = req.params.somePathVariable;
+
+});
+

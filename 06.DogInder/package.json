@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/chye0001/4.-Semester-Node.js#readme",
   "dependencies": {
+    "@faker-js/faker": "^9.6.0",
     "express": "^4.21.2"
   },
   "devDependencies": {
