@@ -1,5 +1,7 @@
 <script>
-    let messageList = $state(["asdasda", "sdfsdfsf", 12]);
+  import FirstMessage from "./FirstMessage.svelte";
+
+    let messageList = $state([]);
     let messageInput = $state("");
 
     function addMessage(){
@@ -12,3 +14,5 @@
 <input bind:value={messageInput} placeholder="Type your message">
 <button onclick={addMessage}>Submit</button>
 <p>{messageList}</p>
+
+<FirstMessage firstMessage={messageList[0]} />

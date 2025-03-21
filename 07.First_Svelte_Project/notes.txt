@@ -4,3 +4,9 @@ public statis
 
 
 npx executes a command, and keeps it in the cache.
+
+
+legacy svelte:
+runes did not exist, so passing varibles to children componentes you would need to export the varibale that had to by passed down to the child component.
+Now we add the $props rune to the varbile inside the child components.
+
