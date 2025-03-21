@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangerous Page</title>
+</head>
+<body>
+    
+    <h1>DANGER!!!</h1>
+
+    <div id="content">
+
+    </div>
+
+    <script>
+
+        function sanitizeXSS(string) {
+            return string
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#39;')
+                .replaceAll('`', '&#x60;')
+                .replaceAll('/', '&#x2F;');
+        }
+
+        const contentDiv = document.getElementById("content");
+        contentDiv.innerHTML = sanitizeXSS(`<img src="x" onerror="alert('XSS')"/>`);
+        // contentDiv.innerHTML = sanitizeXSS("sda");
+        // contentDiv.innerHTML = `<img src="x" onerror="alert('XSS')">`;
+        
+    </script>
+
+</body>
+</html>
