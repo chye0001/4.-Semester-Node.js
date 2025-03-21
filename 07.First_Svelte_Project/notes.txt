@@ -1,0 +1,3 @@
+vite --host //this is used so you can see the developing application on another device such as your phone
+
+public statis
