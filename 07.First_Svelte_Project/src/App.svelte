@@ -1,6 +1,7 @@
 <script>
 
   import Counter from "./components/Counter/Counter.svelte";
+  import Home from "./components/Home/Home.svelte";
   import Messages from './components/Messages/Messages.svelte';
 
 </script>
@@ -8,9 +9,4 @@
 
 <!-- <Counter/> -->
 <Messages/>
-
-<style>
-  h1{
-    color: goldenrod
-  }
-</style>
+<Home />
