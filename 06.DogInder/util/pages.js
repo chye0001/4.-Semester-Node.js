@@ -12,7 +12,13 @@ const matchesPage = constructPage(
     }
 );
 
+const contact = readPage('./public/pages/contact/contact.html');
+const contactPage = constructPage(contact, {
+    title: 'DogInder | Contact'
+})
+
 export {
     frontpagePage,
-    matchesPage
+    matchesPage,
+    contactPage
 };

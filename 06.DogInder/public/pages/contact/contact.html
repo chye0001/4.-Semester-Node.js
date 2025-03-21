@@ -1,0 +1,19 @@
+<h1>Hi from contact</h1>
+
+<form method="POST" action="/api/contact">
+    
+    <!-- For at spare tid når man tester kan man give input en default value via: value="someValue" -->
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" placeholder="Your email..." required value="Bob">
+
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" placeholder="Your name..." required value="bob@email.com">
+
+    <label for="message">Message</label>
+
+    <!-- Man kan bruge f.eks cols="100" rows="15" -->
+    <!-- Eller i css weidth: 100px; height: 100px; -->
+    <textarea id="message" name="message" required></textarea>
+
+    <button aria-label="Submit Form">Submit</button>
+</form>
