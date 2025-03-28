@@ -1,0 +1,6 @@
+vite er en bundler
+
+npm run build //minifier css og js, samt packager filer til js.
+
+// componenter var klasser historisik, derfor skriver man componenter med stort begyndelses bogstav.
+
