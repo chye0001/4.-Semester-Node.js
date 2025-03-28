@@ -1,10 +1,15 @@
 <script>
     import Child from "../Child/child.svelte";
+    import { fridgeMessages } from "../../stores/fridgeMessagesStore.js";
+
     const {name: parentName, children} = $props();
     
     function handleShowLove(childName) {
         console.log(`${parentName} is showing love for... ${childName}`);
     }
+
+
+
 
     let cookieJar = $state(["🍪", "🍪", "🍪", "🍪", "🍪"]);
     let ateLastCookieChild = $state();
@@ -25,11 +30,20 @@
         cookieJar = ["🍪", "🍪", "🍪", "🍪", "🍪"];
     } 
 
+
+    // Had to make this function when using Standard Store.
+    // function wipeFridgeMessages() {
+    //     fridgeMessages.set([])
+    // }
+
+
+
 </script>
 
 <h1>{parentName}</h1>
 
 <button onclick={refillCookieJar}>Refill cookie jar</button>
+<button onclick={fridgeMessages.wipe}>Wipe Fridge Messages</button>
 
 <p >
     {#each cookieJar as cookie}

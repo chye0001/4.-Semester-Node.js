@@ -20,3 +20,10 @@ Generelt om web frameworks:
         Man kan ikke sende data den anden vej fra child til parent. 
             I stedet er der forskellige måde at komme rundt om dette, f.eks. ved at sende en functions reference, som kan kaldes ned i child, med specifikt data i child. 
     - convention er at functioner som starter med handle ved vi den er declaret i parent og on så sendes den videre som en prop. 
+
+
+
+
+I React bruger man Context
+
+I Svelte bruger man Store
