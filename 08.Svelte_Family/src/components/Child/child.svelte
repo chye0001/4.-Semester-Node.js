@@ -1,13 +1,17 @@
 <script>
-    const { name, isGirl, familySheep } = $props();
-
+    const { name, isGirl, familySheep, onShowLove, onEatCookie } = $props();
+    
 </script>
+
 
 <div 
     class:is-girl={isGirl}
     class:is-boy={!isGirl}
-    class={familySheep || "not-a-sheep"}>
+    class={familySheep || "not-a-sheep"}
+    >
     <p>{name}</p>
+    <button onclick={ () => onShowLove(name)}>Show love</button>
+    <button onclick={() => onEatCookie(name)}>Eat cookie</button>
 </div>
 
 <style>
