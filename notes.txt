@@ -4,3 +4,17 @@ npm run build //minifier css og js, samt packager filer til js.
 
 // componenter var klasser historisik, derfor skriver man componenter med stort begyndelses bogstav.
 
+
+Child.svelte:
+<div 
+    class:is-girl={isGirl}   //KUN hvis isGirl er true for componentet is-girl som class. 
+    class={familySheep || "not-a-sheep"}>
+    <p>{name}</p>
+</div>
+       
+
+
+Generelt om web frameworks:
+Det generelle flow er at man sender data ned ad fra parent til children.
+
+framework bygger videre på DOM træet

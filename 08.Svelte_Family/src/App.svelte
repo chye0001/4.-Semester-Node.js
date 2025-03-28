@@ -6,11 +6,11 @@
     const children = [
         {
             name: "Kain",
-            familySheep: "Black sheep"
+            familySheep: "black-sheep"
         }, 
         {
             name: "Abel",
-            familySheep: "Gray sheep"
+            familySheep: "gray-sheep"
         },
         {
             name: "Leona",
