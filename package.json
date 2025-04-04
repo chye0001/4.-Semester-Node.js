@@ -1,0 +1,21 @@
+{
+  "name": "4.-semester-node",
+  "version": "1.0.0",
+  "description": "Node!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chye0001/4.-Semester-Node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chye0001/4.-Semester-Node.js/issues"
+  },
+  "homepage": "https://github.com/chye0001/4.-Semester-Node.js#readme"
+}

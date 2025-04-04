@@ -1,3 +1,5 @@
+28/04-2025
+
 vite er en bundler
 
 npm run build //minifier css og js, samt packager filer til js.
@@ -27,3 +29,13 @@ Generelt om web frameworks:
 I React bruger man Context
 
 I Svelte bruger man Store
+
+
+
+
+04/04-2025
+Man kan ikke sende 2 seperate responses på et request (client server modelen - client sender et request og server sender et response)
+
+express is build upon middleware
+
+app.use() //this is middleware, it takes a function an places the function reference as middleware before sending a response.
