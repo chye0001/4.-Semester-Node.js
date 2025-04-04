@@ -39,3 +39,6 @@ Man kan ikke sende 2 seperate responses på et request (client server modelen - 
 express is build upon middleware
 
 app.use() //this is middleware, it takes a function an places the function reference as middleware before sending a response.
+
+Remember ordering matters when using middleware, such as when using sessions, we should register the sessionrouter at the bottom,
+so it includes middleware such as ratelimiting and response headers.

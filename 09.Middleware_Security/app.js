@@ -24,6 +24,16 @@ const authLimiter = rateLimit({
 })
 app.use("/auth", authLimiter);
 
+
+import session from 'express-session';
+app.use(session({
+    secret: 'keyboard cat', // have this secret in a .env file
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }  //false beacause we use http in dev, but has to be true in production because it uses https
+}))
+
+
 // function greetLoggedInUSers(req, res, next) {
 //     // let's assume that we do a DB ceheck to see that they are logged in here
 //     console.log("Welcome, logged in user");
@@ -32,12 +42,16 @@ app.use("/auth", authLimiter);
 // app.use(greetLoggedInUSers); // adds the middleware to all routes
 
 
-import middlewareRouter from './routers/middlewareRouter.js'
+import middlewareRouter from './routers/middlewareRouter.js';
 app.use(middlewareRouter);
 
 
-import authRouter from './routers/authRouter.js'
+import authRouter from './routers/authRouter.js';
 app.use(authRouter);
+
+
+import sessionRouter from './routers/sessionRouter.js';
+app.use(sessionRouter);
 
 
 
