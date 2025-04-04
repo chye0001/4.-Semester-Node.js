@@ -42,3 +42,5 @@ app.use() //this is middleware, it takes a function an places the function refer
 
 Remember ordering matters when using middleware, such as when using sessions, we should register the sessionrouter at the bottom,
 so it includes middleware such as ratelimiting and response headers.
+
+The client can never acesses the session object it resides only on the server
