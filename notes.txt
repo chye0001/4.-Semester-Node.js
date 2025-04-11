@@ -44,3 +44,26 @@ Remember ordering matters when using middleware, such as when using sessions, we
 so it includes middleware such as ratelimiting and response headers.
 
 The client can never acesses the session object it resides only on the server
+
+
+
+11/04-2025
+CROSENV som er en wrapper der sætter baseret på en miljøet. 
+PORT=9090 kun nix systemer
+
+//how to generate seceret key
+> require("crypto").randomBytes(26)
+<Buffer c5 d2 cb 6e ca f4 4a 51 da a4 55 75 ae 17 f5 0d 50 84 f9 5b 56 d7 ba 4c 05 09>
+
+> require("crypto").randomBytes(26).toString()
+"Fc�uI\x1D�?S�'\x129��Ø\x18��n;Q>o�"
+
+> require("crypto").randomBytes(26).toString("hex")
+'9a05169eb18ecb7e781b21bsdaba2899f6480f7dcf803dd867d5c'
+
+
+
+
+READ UP ON:
+Hvad er nix systemer?
+Hvad er crosenv wrapper?
