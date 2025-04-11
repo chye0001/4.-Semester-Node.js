@@ -3,11 +3,17 @@ const router = Router();
 const URL_PREFIX = "/api"
 
 router.get(URL_PREFIX + "/pills", (req, res) => {
-    res.send({ data: "pills gotten" })
+    res.send({ data: req.session.pills || [] });
 })
 
 router.post(URL_PREFIX + "/pills", (req, res) => {
-    res.send({ data: "pills added" })
+    
+    if (!req.session.pills) {
+        req.session.pills = [];
+    }
+    req.session.pills.push(req.body);
+    
+    res.send({ data: req.session.pills });
 })
 
 export default router;

@@ -62,9 +62,11 @@ PORT=9090 kun nix systemer
 '9a05169eb18ecb7e781b21bsdaba2899f6480f7dcf803dd867d5c'
 
 
+CORS is to mitigate clickjacking.
 
 
 READ UP ON:
 Hvad er nix systemer?
 Hvad er crosenv wrapper?
 forskellen mellem dependencies og devdependencies i package.json
+What is serverless?
