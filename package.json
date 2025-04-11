@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/chye0001/4.-Semester-Node.js/issues"
   },
-  "homepage": "https://github.com/chye0001/4.-Semester-Node.js#readme"
+  "homepage": "https://github.com/chye0001/4.-Semester-Node.js#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }

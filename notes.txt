@@ -67,3 +67,4 @@ PORT=9090 kun nix systemer
 READ UP ON:
 Hvad er nix systemer?
 Hvad er crosenv wrapper?
+forskellen mellem dependencies og devdependencies i package.json
