@@ -28,7 +28,9 @@ app.use("/auth", authLimiter);
 // dotenv.config();
 // console.log(process.env.SESSION_SECRET)
 
+// 2 ways to import dotenv
 import dotenv from 'dotenv/config'
+import 'dotenv/config'
 
 import session from 'express-session';
 app.use(session({

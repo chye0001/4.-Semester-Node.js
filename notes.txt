@@ -70,3 +70,4 @@ Hvad er nix systemer?
 Hvad er crosenv wrapper?
 forskellen mellem dependencies og devdependencies i package.json
 What is serverless?
+CROS and credentials include and session id 
