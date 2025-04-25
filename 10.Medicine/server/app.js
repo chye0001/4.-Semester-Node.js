@@ -18,6 +18,8 @@ app.use(cors({
 //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 //     next();
 // });
+console.log(process.env);
+
 
 import session from 'express-session';
 app.use(session({
@@ -34,5 +36,5 @@ import pillsRouter from './router/pillsRouter.js';
 app.use(pillsRouter);
 
 
-const PORT = Number(process.env.PORT || 8080);
+const PORT = Number(process.env.PORT || 8081);
 app.listen(PORT, () => {console.log("Server is running on port:", PORT)})
