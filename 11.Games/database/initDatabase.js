@@ -1,7 +1,7 @@
 import db from './connection.js';
 
 //db.all for SELECT statements, we want to get something back
-//db.run for INSERT, UPDATE, DELETE, nothing gets returned
+//db.run for INSERT, UPDATE, DELETE, does not return database data such as the inserted row
 //db.exec for schematics without parameters, can contain multiple commands
 
 const deleteMode = process.argv.includes("--delete");
@@ -45,5 +45,3 @@ if(deleteMode) {
 await db.run("INSERT INTO runtime_environments (platform, version) VALUES ('Switch', 'V2');");
 await db.run("INSERT INTO games (title, description, price, genre, runtime_enviorment_id) VALUES('Mariocart', 'itilian man driving racing a car', 300, 'RACING', 1);");
 }
-
-console.log(await db.all("SELECT * FROM games"));
