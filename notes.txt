@@ -84,3 +84,12 @@ Short pulling
 Der er forskel på websocket og socket.io (socket.io er ikke websocket, og har en relativ stor begrænsing på users den kan emit til)
 
 what are name spaces and rooms in regards to sockets (socket.io)
+When to use state and when not to
+
+biblioteks functioner (ting som er inbygget i frameworket)
+
+ekstern biblioteks functioner
+
+egne functioner
+
+variable
