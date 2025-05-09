@@ -71,3 +71,16 @@ Hvad er crosenv wrapper?
 forskellen mellem dependencies og devdependencies i package.json
 What is serverless?
 CROS and credentials include and session id 
+
+
+
+
+
+
+
+
+Keep Alive header 
+Short pulling
+Der er forskel på websocket og socket.io (socket.io er ikke websocket, og har en relativ stor begrænsing på users den kan emit til)
+
+what are name spaces and rooms in regards to sockets (socket.io)
